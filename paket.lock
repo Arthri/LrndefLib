@@ -1,4 +1,3 @@
-STORAGE: NONE
 RESTRICTION: == net472
 NUGET
   remote: https://www.nuget.org/api/v2
