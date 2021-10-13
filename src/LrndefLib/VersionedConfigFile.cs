@@ -9,7 +9,7 @@ namespace LrndefLib
     public class VersionedConfigFile<TSettings> : IConfigFile<TSettings>
         where TSettings : VersionedSettings
     {
-        public Version CurrentVersion { get; }
+        public SimpleVersion CurrentVersion { get; }
 
         public TSettings Settings { get; set; }
 
@@ -17,7 +17,7 @@ namespace LrndefLib
         {
             var assembly = typeof(TSettings).Assembly;
             var version = FileVersionInfo.GetVersionInfo(assembly.Location);
-            CurrentVersion = new Version(version.FileMajorPart, version.FileMinorPart, version.FileBuildPart, version.FilePrivatePart);
+            CurrentVersion = version;
         }
 
         public VersionedConfigFile(Version currentVersion)

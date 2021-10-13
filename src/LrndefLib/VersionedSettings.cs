@@ -1,5 +1,4 @@
 ﻿using Newtonsoft.Json;
-using System;
 
 namespace LrndefLib
 {
@@ -9,6 +8,6 @@ namespace LrndefLib
             PropertyName = "version",
             Order = int.MinValue,
             Required = Required.Always)]
-        public Version SettingsVersion { get; }
+        public SimpleVersion SettingsVersion { get; }
     }
 }
