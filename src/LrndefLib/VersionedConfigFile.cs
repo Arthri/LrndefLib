@@ -32,13 +32,12 @@ namespace LrndefLib
 
         public TSettings FromJSON(string json, out bool incompleteSettings)
         {
-            throw new NotImplementedException();
-
             TSettings deserialized = JsonConvert.DeserializeObject<TSettings>(json);
 
-            if (deserialized.SettingsVersion != deserialized.CurrentVersion)
+            if (deserialized.SettingsVersion != CurrentVersion)
             {
                 incompleteSettings = true;
+                throw new NotImplementedException();
             }
             else
             {
