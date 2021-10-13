@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System;
+using System.Diagnostics;
 using System.IO;
 using TShockAPI.Configuration;
 
@@ -8,7 +9,21 @@ namespace LrndefLib
     public class VersionedConfigFile<TSettings> : IConfigFile<TSettings>
         where TSettings : VersionedSettings
     {
+        public Version CurrentVersion { get; }
+
         public TSettings Settings { get; set; }
+
+        public VersionedConfigFile()
+        {
+            var assembly = typeof(TSettings).Assembly;
+            var version = FileVersionInfo.GetVersionInfo(assembly.Location);
+            CurrentVersion = new Version(version.FileMajorPart, version.FileMinorPart, version.FileBuildPart, version.FilePrivatePart);
+        }
+
+        public VersionedConfigFile(Version currentVersion)
+        {
+            CurrentVersion = currentVersion;
+        }
 
         TSettings IConfigFile<TSettings>.ConvertJson(string json, out bool incompleteSettings)
         {

@@ -10,8 +10,5 @@ namespace LrndefLib
             Order = int.MinValue,
             Required = Required.Always)]
         public Version SettingsVersion { get; }
-
-        [JsonIgnore]
-        public abstract Version CurrentVersion { get; }
     }
 }

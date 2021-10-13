@@ -36,6 +36,7 @@
     <Compile Include="VersionedSettings.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="System" />
     <Reference Include="TShockAPI">
       <HintPath>..\..\paket-files\github.com\TShock\ServerPlugins\TShockAPI.dll</HintPath>
     </Reference>
