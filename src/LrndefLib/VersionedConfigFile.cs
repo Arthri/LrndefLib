@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+using Newtonsoft.Json;
 using System;
 using System.Diagnostics;
 using System.IO;
@@ -12,13 +12,6 @@ namespace LrndefLib
         public SimpleVersion CurrentVersion { get; }
 
         public TSettings Settings { get; set; }
-
-        public VersionedConfigFile()
-        {
-            var assembly = typeof(TSettings).Assembly;
-            var version = FileVersionInfo.GetVersionInfo(assembly.Location);
-            CurrentVersion = version;
-        }
 
         public VersionedConfigFile(Version currentVersion)
         {
