@@ -19,6 +19,11 @@ namespace LrndefLib
         [JsonProperty("version")]
         public SimpleVersion SettingsVersion { get; internal set; }
 
+        /// <summary>
+        /// Initializes a new instance of <see cref="SettingsMetadata"/>.
+        /// </summary>
+        /// <param name="metadataVersion">The metadata version.</param>
+        /// <param name="settingsVersion">The settings version.</param>
         public SettingsMetadata(
             SimpleVersion metadataVersion,
             SimpleVersion settingsVersion)

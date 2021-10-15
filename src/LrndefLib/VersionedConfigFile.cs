@@ -6,6 +6,10 @@ using TShockAPI.Configuration;
 
 namespace LrndefLib
 {
+    /// <summary>
+    /// Represents a version-based config file.
+    /// </summary>
+    /// <typeparam name="TSettings">The type of settings.</typeparam>
     public class VersionedConfigFile<TSettings> : IConfigFile<TSettings>
         where TSettings : VersionedSettings
     {
@@ -14,19 +18,26 @@ namespace LrndefLib
         /// </summary>
         public static readonly SimpleVersion CurrentMetadataVersion = new SimpleVersion(0, 0, 1);
 
+        /// <summary>
+        /// Represents the current settings version.
+        /// </summary>
         public SimpleVersion CurrentVersion { get; }
 
+        /// <summary>
+        /// Represents the settings.
+        /// </summary>
         public TSettings Settings { get; set; }
 
         /// <summary>
-        /// Converts the specified <see cref="JObject"/> instance to <see cref="TSettings"/>.
+        /// Converts the specified <see cref="JObject"/> instance to <typeparamref name="TSettings"/>.
         /// </summary>
         /// <param name="metadata">The settings' metadata.</param>
         /// <param name="jObject">The parsed <see cref="JObject"/>.</param>
-        /// <param name="incompleteSettings">Whether or not the version has changed.</param>
-        /// <returns></returns>
+        /// <param name="incompleteSettings"><inheritdoc cref="FromJSON(string, out bool)" path="/param[@name='incompleteSettings']"/></param>
+        /// <returns>The convereted settings.</returns>
         public delegate TSettings BindJObject(SettingsMetadata metadata, JObject jObject, ref bool incompleteSettings);
 
+        /// <inheritdoc cref="BindDelegate"/>
         private BindJObject _bindDelegate;
 
         /// <summary>
@@ -49,6 +60,10 @@ namespace LrndefLib
             }
         }
 
+        /// <summary>
+        /// Initializes a new instance of <see cref="VersionedConfigFile{TSettings}"/>.
+        /// </summary>
+        /// <param name="currentVersion">The current settings version.</param>
         public VersionedConfigFile(Version currentVersion)
         {
             CurrentVersion = currentVersion;
@@ -59,11 +74,18 @@ namespace LrndefLib
             };
         }
 
+        /// <inheritdoc />
         TSettings IConfigFile<TSettings>.ConvertJson(string json, out bool incompleteSettings)
         {
             return FromJSON(json, out incompleteSettings);
         }
 
+        /// <summary>
+        /// Parses the settings from the specified JSON.
+        /// </summary>
+        /// <param name="json">The JSON.</param>
+        /// <param name="incompleteSettings">Whether or not the version has changed.</param>
+        /// <returns>The parsed settings.</returns>
         public TSettings FromJSON(string json, out bool incompleteSettings)
         {
             var jObject = JObject.Parse(json);
@@ -98,6 +120,12 @@ namespace LrndefLib
             return deserialized;
         }
 
+        /// <summary>
+        /// Reads the settings from the specified file.
+        /// </summary>
+        /// <param name="path">The file path.</param>
+        /// <param name="incompleteSettings"><inheritdoc cref="FromJSON(string, out bool)" path="/param[@name='incompleteSettings']"/></param>
+        /// <returns><inheritdoc cref="FromJSON(string, out bool)"/></returns>
         public TSettings Read(string path, out bool incompleteSettings)
         {
             using (var stream = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.Read))
@@ -106,6 +134,12 @@ namespace LrndefLib
             }
         }
 
+        /// <summary>
+        /// Reads the settings from the specified stream.
+        /// </summary>
+        /// <param name="stream">The stream.</param>
+        /// <param name="incompleteSettings"><inheritdoc cref="FromJSON(string, out bool)" path="/param[@name='incompleteSettings']"/></param>
+        /// <returns><inheritdoc cref="FromJSON(string, out bool)"/></returns>
         public TSettings Read(Stream stream, out bool incompleteSettings)
         {
             using (var reader = new StreamReader(stream))
@@ -114,6 +148,10 @@ namespace LrndefLib
             }
         }
 
+        /// <summary>
+        /// Writes the settings to the specified path.
+        /// </summary>
+        /// <param name="path">The path.</param>
         public void Write(string path)
         {
             using (var stream = new FileStream(path, FileMode.Create, FileAccess.Write, FileShare.None))
@@ -122,6 +160,10 @@ namespace LrndefLib
             }
         }
 
+        /// <summary>
+        /// Writes the settings to the stream.
+        /// </summary>
+        /// <param name="stream">The stream.</param>
         public void Write(Stream stream)
         {
             using (var writer = new StreamWriter(stream))

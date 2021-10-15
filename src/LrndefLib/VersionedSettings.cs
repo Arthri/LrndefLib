@@ -24,7 +24,7 @@ namespace LrndefLib
         /// <summary>
         /// Initializes new settings with the specified metadata.
         /// </summary>
-        /// <param name="metadata"><inheritdoc cref="Metadata" /></param>
+        /// <param name="metadata">The settings' metadata.</param>
         public VersionedSettings(
             SettingsMetadata metadata)
         {

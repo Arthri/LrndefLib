@@ -308,7 +308,7 @@ namespace LrndefLib
         /// Determines whether the first specified <see cref="SimpleVersion"/> object is less than the second specified <see cref="SimpleVersion"/> object.
         /// </summary>
         /// <param name="a">The first <see cref="SimpleVersion"/> object.</param>
-        /// <param name="a">The second <see cref="SimpleVersion"/> object.</param>
+        /// <param name="b">The second <see cref="SimpleVersion"/> object.</param>
         /// <returns>true if <paramref name="a"/> is less than <paramref name="b"/>; otherwise, false.</returns>
         public static bool operator <(SimpleVersion a, SimpleVersion b)
         {
@@ -319,7 +319,7 @@ namespace LrndefLib
         /// Determines whether the first specified <see cref="SimpleVersion"/> object is less than or equal to the second specified <see cref="SimpleVersion"/> object.
         /// </summary>
         /// <param name="a">The first <see cref="SimpleVersion"/> object.</param>
-        /// <param name="a">The second <see cref="SimpleVersion"/> object.</param>
+        /// <param name="b">The second <see cref="SimpleVersion"/> object.</param>
         /// <returns>true if <paramref name="a"/> is less than or equal to <paramref name="b"/>; otherwise, false.</returns>
         public static bool operator <=(SimpleVersion a, SimpleVersion b)
         {
@@ -330,7 +330,7 @@ namespace LrndefLib
         /// Determines whether the first specified <see cref="SimpleVersion"/> object is greater than the second specified <see cref="SimpleVersion"/> object.
         /// </summary>
         /// <param name="a">The first <see cref="SimpleVersion"/> object.</param>
-        /// <param name="a">The second <see cref="SimpleVersion"/> object.</param>
+        /// <param name="b">The second <see cref="SimpleVersion"/> object.</param>
         /// <returns>true if <paramref name="a"/> is greater than <paramref name="b"/>; otherwise, false.</returns>
         public static bool operator >(SimpleVersion a, SimpleVersion b)
         {
@@ -341,7 +341,7 @@ namespace LrndefLib
         /// Determines whether the first specified <see cref="SimpleVersion"/> object is greater than or equal to the second specified <see cref="SimpleVersion"/> object.
         /// </summary>
         /// <param name="a">The first <see cref="SimpleVersion"/> object.</param>
-        /// <param name="a">The second <see cref="SimpleVersion"/> object.</param>
+        /// <param name="b">The second <see cref="SimpleVersion"/> object.</param>
         /// <returns>true if <paramref name="a"/> is greater than or equal to <paramref name="b"/>; otherwise, false.</returns>
         public static bool operator >=(SimpleVersion a, SimpleVersion b)
         {
