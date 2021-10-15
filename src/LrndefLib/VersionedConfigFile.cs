@@ -27,7 +27,7 @@ namespace LrndefLib
         {
             TSettings deserialized = JsonConvert.DeserializeObject<TSettings>(json);
 
-            if (deserialized.SettingsVersion != CurrentVersion)
+            if (deserialized.Metadata.SettingsVersion != CurrentVersion)
             {
                 incompleteSettings = true;
                 throw new NotImplementedException();
