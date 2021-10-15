@@ -19,7 +19,7 @@ namespace LrndefLib
             Order = int.MinValue,
             PropertyName = PROPNAME_Metadata,
             Required = Required.Always)]
-        public SettingsMetadata Metadata { get; }
+        public SettingsMetadata Metadata { get; internal set; }
 
         /// <summary>
         /// Initializes new settings with the specified metadata.

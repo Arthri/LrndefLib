@@ -1,4 +1,4 @@
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.IO;
@@ -90,6 +90,10 @@ namespace LrndefLib
 
             var deserialized = _bindDelegate(metadata, jObject, ref incompleteSettings);
             Settings = deserialized;
+
+            metadata.MetadataVersion = CurrentMetadataVersion;
+            metadata.SettingsVersion = CurrentVersion;
+            Settings.Metadata = metadata;
 
             return deserialized;
         }

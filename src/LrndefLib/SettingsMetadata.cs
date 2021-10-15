@@ -11,13 +11,13 @@ namespace LrndefLib
         /// Represents the metadata version it was written in.
         /// </summary>
         [JsonProperty("metadataVersion")]
-        public SimpleVersion MetadataVersion { get; }
+        public SimpleVersion MetadataVersion { get; internal set; }
 
         /// <summary>
         /// Represents the settings version it was written in.
         /// </summary>
         [JsonProperty("version")]
-        public SimpleVersion SettingsVersion { get; }
+        public SimpleVersion SettingsVersion { get; internal set; }
 
         public SettingsMetadata(
             SimpleVersion metadataVersion,
