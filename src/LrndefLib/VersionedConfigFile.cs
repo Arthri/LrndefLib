@@ -44,7 +44,7 @@ namespace LrndefLib
 
         public TSettings Read(string path, out bool incompleteSettings)
         {
-            using (FileStream stream = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.Read))
+            using (var stream = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.Read))
             {
                 return Read(stream, out incompleteSettings);
             }
@@ -52,7 +52,7 @@ namespace LrndefLib
 
         public TSettings Read(Stream stream, out bool incompleteSettings)
         {
-            using (StreamReader reader = new StreamReader(stream))
+            using (var reader = new StreamReader(stream))
             {
                 return FromJSON(reader.ReadToEnd(), out incompleteSettings);
             }
@@ -60,7 +60,7 @@ namespace LrndefLib
 
         public void Write(string path)
         {
-            using (FileStream stream = new FileStream(path, FileMode.Create, FileAccess.Write, FileShare.None))
+            using (var stream = new FileStream(path, FileMode.Create, FileAccess.Write, FileShare.None))
             {
                 Write(stream);
             }
@@ -68,9 +68,9 @@ namespace LrndefLib
 
         public void Write(Stream stream)
         {
-            using (StreamWriter writer = new StreamWriter(stream))
+            using (var writer = new StreamWriter(stream))
             {
-                string json = JsonConvert.SerializeObject(Settings);
+                var json = JsonConvert.SerializeObject(Settings);
                 writer.Write(json);
             }
         }
