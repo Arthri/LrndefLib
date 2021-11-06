@@ -170,7 +170,6 @@ namespace LrndefLib
             {
                 var jsonSerializer = CreateSerializer();
                 var jObject = JObject.FromObject(Settings, jsonSerializer);
-                jObject.Remove("metadata");
 
                 // Append metadata
                 var metadataJObject = JObject.FromObject(Metadata);
@@ -194,6 +193,7 @@ namespace LrndefLib
         {
             var jsonSettings = new JsonSerializerSettings();
             jsonSettings.Converters.Add(SimpleVersionJsonConverter.Default);
+            jsonSettings.ContractResolver = IgnoreMetadataResolver.Default;
 
             return JsonSerializer.CreateDefault(jsonSettings);
         }
