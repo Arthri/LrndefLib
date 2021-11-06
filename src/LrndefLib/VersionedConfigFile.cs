@@ -155,11 +155,14 @@ namespace LrndefLib
             }
         }
 
+        void IConfigFile<TSettings>.Write(Stream stream) => Write(stream, null);
+
         /// <summary>
         /// Writes the settings to the stream.
         /// </summary>
         /// <param name="stream">The stream.</param>
-        public void Write(Stream stream)
+        /// <param name="transformWriter">An action that transforms the JSON writer used to serialize the config.</param>
+        public void Write(Stream stream, Action<JsonTextWriter> transformWriter = null)
         {
             using (var writer = new StreamWriter(stream))
             {
@@ -173,6 +176,8 @@ namespace LrndefLib
 
                 using (var jsonWriter = new JsonTextWriter(writer))
                 {
+                    transformWriter?.Invoke(jsonWriter);
+
                     jObject.WriteTo(
                         jsonWriter,
                         SimpleVersionJsonConverter.Default);
