@@ -33,12 +33,8 @@
     <DocumentationFile>bin\Release\LrndefLib.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="IgnoreMetadataResolver.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SettingsMetadata.cs" />
-    <Compile Include="SimpleVersion.cs" />
-    <Compile Include="SimpleVersionJsonConverter.cs" />
-    <Compile Include="VersionedConfigFile.cs" />
+    <Compile Include="*.cs" />
+    <Compile Include="Properties\*.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
