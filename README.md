@@ -1,7 +1,7 @@
 # LrndefLib
 LrndefLib provides a version-based config file
 
-![GitHub license](https://img.shields.io/github/license/Arthri/LrndefLib?style=flat-square) ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/Arthri/LrndefLib?sort=semver&style=flat-square) ![GitHub release (latest SemVer including pre-releases)](https://img.shields.io/github/v/release/Arthri/LrndefLib?include_prereleases&sort=semver&style=flat-square)
+![GitHub license](https://img.shields.io/github/license/Arthri/LrndefLib?style=flat-square) ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/Arthri/LrndefLib?sort=semver&style=flat-square) ![GitHub release (latest SemVer including pre-releases)](https://img.shields.io/github/v/release/Arthri/LrndefLib?include_prereleases&sort=semver&style=flat-square) ![Nuget](https://img.shields.io/nuget/v/LrndefLib?style=flat-square) ![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/LrndefLib?style=flat-square)
 
 ## Goals
 
