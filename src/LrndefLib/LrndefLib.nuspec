@@ -13,7 +13,7 @@
     <copyright>$copyright$</copyright>
     <tags>tshock terraria</tags>
     <readme>docs\README.md</readme>
-    <repository type="git" url="https://github.com/Arthri/LrndefLib.git" branch="master" commit="92f956c1d1dc480920e50d253314b768b878096c" />
+    <repository type="git" url="https://github.com/Arthri/LrndefLib.git" branch="master" commit="001b48eb2ec513d76a230cf1eb2d65cd8cfbaba2" />
   </metadata>
   <files>
     <file src="..\..\README.md" target="docs\" />
