@@ -17,23 +17,19 @@ namespace LrndefLib
         /// <inheritdoc />
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
-            var value = (string)reader.Value;
-
-            if (int.TryParse(value, out var packedVersion))
+            if (!(reader.Value is long value))
             {
+                throw new ArgumentException("current value of reader is not of type Int64", nameof(reader));
+            }
+
+            if (value < uint.MaxValue && value > uint.MinValue)
+            {
+                var packedVersion = (int)value;
                 return new SimpleVersion(packedVersion);
             }
             else
             {
-                if (objectType.IsGenericType
-                    && objectType.GetGenericTypeDefinition() == typeof(Nullable<>))
-                {
-                    return null;
-                }
-                else
-                {
-                    return new SimpleVersion(0);
-                }
+                throw new ArgumentException("current value of reader is not within bounds of UInt32", nameof(reader));
             }
         }
 
