@@ -8,6 +8,11 @@ namespace LrndefLib
     public sealed class SettingsMetadata
     {
         /// <summary>
+        /// Represents the current metadata version.
+        /// </summary>
+        public static readonly SimpleVersion CurrentMetadataVersion = new SimpleVersion(1, 0, 0, 0);
+
+        /// <summary>
         /// Represents the metadata version it was written in.
         /// </summary>
         [JsonProperty("metadataVersion")]

@@ -13,11 +13,6 @@ namespace LrndefLib
     public class VersionedConfigFile<TSettings> : IConfigFile<TSettings>
     {
         /// <summary>
-        /// Represents the current metadata version.
-        /// </summary>
-        public static readonly SimpleVersion CurrentMetadataVersion = new SimpleVersion(0, 0, 1);
-
-        /// <summary>
         /// Represents the current settings version.
         /// </summary>
         public SimpleVersion CurrentVersion { get; }
@@ -100,7 +95,7 @@ namespace LrndefLib
             var metadata = metadataToken.ToObject<SettingsMetadata>(jsonSerializer);
             Metadata = metadata;
 
-            if (metadata.MetadataVersion != CurrentMetadataVersion)
+            if (metadata.MetadataVersion != SettingsMetadata.CurrentMetadataVersion)
             {
                 // Migrate metadata
             }
