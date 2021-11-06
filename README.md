@@ -15,12 +15,17 @@ Migrations can be implemented by modifying `VersionedConfigFile.BindDelegate`. T
 
 ## Installation
 
-### With Paket
-1. Install and set up Paket
-2. Add `http https://github.com/Arthri/LrndefLib/releases/[VERSION]/download/LrndefLib.zip packages/LrndefLib/LrndefLib.zip` to your `paket.dependencies`
+### With Visual Studio/NuGet
+1. Open NuGet
+2. Search for "LrndefLib"
+3. Install
+
+### With Paket(HTTP) (Old Way)
+1. Add `http https://github.com/Arthri/LrndefLib/releases/[VERSION]/download/LrndefLib.nupkg packages/LrndefLib/[VERSION]/LrndefLib.[VERSION].nupkg` to your `paket.dependencies`
     - Replace `[VERSION]` with your desired version. **DO NOT** use `latest`.
-3. Run `dotnet paket install`
-4. Add `paket-files/github.com/packages/LrndefLib/LrndefLib.dll` as a reference
+2. Add `source paket-files/github.com/packages`, also to `paket.dependencies`
+3. Reference in projects via `paket.references`
+4. Run `dotnet paket install`
 
 ## Usage
 1. Create a new config class that inherits from `VersionedSettings`. If one already exists, make it inherit `VersionedSettings`
