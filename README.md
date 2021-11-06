@@ -21,7 +21,7 @@ Migrations can be implemented by modifying `VersionedConfigFile.BindDelegate`. T
 3. Install
 
 ### With Paket(HTTP) (Old Way)
-1. Add `http https://github.com/Arthri/LrndefLib/releases/[VERSION]/download/LrndefLib.nupkg packages/LrndefLib/[VERSION]/LrndefLib.[VERSION].nupkg` to your `paket.dependencies`
+1. Add `http https://github.com/Arthri/LrndefLib/releases/download/[VERSION]/LrndefLib.[VERSION].nupkg packages/LrndefLib/[VERSION]/LrndefLib.[VERSION].nupkg` to your `paket.dependencies`
     - Replace `[VERSION]` with your desired version. **DO NOT** use `latest`.
 2. Add `source paket-files/github.com/packages`, also to `paket.dependencies`
 3. Reference in projects via `paket.references`
