@@ -38,7 +38,6 @@
     <Compile Include="SimpleVersion.cs" />
     <Compile Include="SimpleVersionJsonConverter.cs" />
     <Compile Include="VersionedConfigFile.cs" />
-    <Compile Include="VersionedSettings.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

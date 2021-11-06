@@ -11,7 +11,6 @@ namespace LrndefLib
     /// </summary>
     /// <typeparam name="TSettings">The type of settings.</typeparam>
     public class VersionedConfigFile<TSettings> : IConfigFile<TSettings>
-        where TSettings : VersionedSettings
     {
         /// <summary>
         /// Represents the current metadata version.
@@ -22,6 +21,11 @@ namespace LrndefLib
         /// Represents the current settings version.
         /// </summary>
         public SimpleVersion CurrentVersion { get; }
+
+        /// <summary>
+        /// Represents the settings metadata.
+        /// </summary>
+        public SettingsMetadata Metadata { get; set; }
 
         /// <summary>
         /// Represents the settings.
@@ -92,9 +96,9 @@ namespace LrndefLib
 
             var jsonSerializer = CreateSerializer();
 
-            var metadataToken = jObject[VersionedSettings.PROPNAME_Metadata];
+            var metadataToken = jObject["metadata"];
             var metadata = metadataToken.ToObject<SettingsMetadata>(jsonSerializer);
-            jObject.Remove(VersionedSettings.PROPNAME_Metadata);
+            Metadata = metadata;
 
             if (metadata.MetadataVersion != CurrentMetadataVersion)
             {
@@ -112,10 +116,6 @@ namespace LrndefLib
 
             var deserialized = _bindDelegate(metadata, jObject, ref incompleteSettings);
             Settings = deserialized;
-
-            metadata.MetadataVersion = CurrentMetadataVersion;
-            metadata.SettingsVersion = CurrentVersion;
-            Settings.Metadata = metadata;
 
             return deserialized;
         }
@@ -168,8 +168,21 @@ namespace LrndefLib
         {
             using (var writer = new StreamWriter(stream))
             {
-                var json = JsonConvert.SerializeObject(Settings);
-                writer.Write(json);
+                var jsonSerializer = CreateSerializer();
+                var jObject = JObject.FromObject(Settings, jsonSerializer);
+                jObject.Remove("metadata");
+
+                // Append metadata
+                var metadataJObject = JObject.FromObject(Metadata);
+                var metadataProperty = new JProperty("metadata", Metadata);
+                jObject.AddFirst(metadataProperty);
+
+                using (var jsonWriter = new JsonTextWriter(writer))
+                {
+                    jObject.WriteTo(
+                        jsonWriter,
+                        new SimpleVersionJsonConverter());
+                }
             }
         }
 
