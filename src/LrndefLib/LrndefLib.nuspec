@@ -9,7 +9,7 @@
     <license type="expression">MIT-0</license>
     <projectUrl>https://github.com/Arthri/LrndefLib/</projectUrl>
     <description>$description$</description>
-    <releaseNotes>Fixed deserialization not working. More info at https://github.com/Arthri/LrndefLib/releases/tag/$version$</releaseNotes>
+    <releaseNotes>Removed VersionedSettings and constraint. More info at https://github.com/Arthri/LrndefLib/releases/tag/$version$</releaseNotes>
     <copyright>$copyright$</copyright>
     <tags>tshock terraria</tags>
     <readme>docs\README.md</readme>
