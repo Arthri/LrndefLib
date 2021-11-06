@@ -28,11 +28,10 @@ Migrations can be implemented by modifying `VersionedConfigFile.BindDelegate`. T
 4. Run `dotnet paket install`
 
 ## Usage
-1. Create a new config class that inherits from `VersionedSettings`. If one already exists, make it inherit `VersionedSettings`
-2. Create a new instance of `VersionedConfigFile` like so: `var configFile = new VersionedConfigFile<TSettings>(CurrentVersion);`
-    - replace `TSettings` with the class you created earlier
+1. Create a new instance of `VersionedConfigFile` like so: `var configFile = new VersionedConfigFile<TSettings>(CurrentVersion);`
+    - replace `TSettings` with the settings class
     - replace `CurrentVersion` with the current version of the config
-3. Read the config file: `configFile.Read(configPath, out bool _)`;
+2. Read the config file: `configFile.Read(configPath, out bool _)`;
 
 ## Unofficial Conventions
 
