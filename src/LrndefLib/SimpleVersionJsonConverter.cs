@@ -8,6 +8,11 @@ namespace LrndefLib
     /// </summary>
     public class SimpleVersionJsonConverter : JsonConverter
     {
+        /// <summary>
+        /// Gets the default instance of <see cref="SimpleVersionJsonConverter"/> usable anywhere.
+        /// </summary>
+        public static readonly SimpleVersionJsonConverter Default = new SimpleVersionJsonConverter();
+
         /// <inheritdoc />
         public override bool CanConvert(Type objectType)
         {

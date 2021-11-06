@@ -181,7 +181,7 @@ namespace LrndefLib
                 {
                     jObject.WriteTo(
                         jsonWriter,
-                        new SimpleVersionJsonConverter());
+                        SimpleVersionJsonConverter.Default);
                 }
             }
         }
@@ -193,7 +193,7 @@ namespace LrndefLib
         private JsonSerializer CreateSerializer()
         {
             var jsonSettings = new JsonSerializerSettings();
-            jsonSettings.Converters.Add(new SimpleVersionJsonConverter());
+            jsonSettings.Converters.Add(SimpleVersionJsonConverter.Default);
 
             return JsonSerializer.CreateDefault(jsonSettings);
         }
