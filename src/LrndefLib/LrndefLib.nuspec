@@ -12,5 +12,9 @@
     <releaseNotes>Core release. More info at https://github.com/Arthri/LrndefLib/releases/tag/1.0.0</releaseNotes>
     <copyright>$copyright$</copyright>
     <tags>tshock terraria</tags>
+    <readme>docs\README.md</readme>
   </metadata>
+  <files>
+    <file src="..\..\README.md" target="docs\" />
+  </files>
 </package>
