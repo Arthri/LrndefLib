@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MIT-0</license>
+    <projectUrl>https://github.com/Arthri/LrndefLib/</projectUrl>
+    <description>$description$</description>
+    <releaseNotes>Core release. More info at https://github.com/Arthri/LrndefLib/releases/tag/1.0.0</releaseNotes>
+    <copyright>$copyright$</copyright>
+    <tags>tshock terraria</tags>
+  </metadata>
+</package>
