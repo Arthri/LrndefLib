@@ -168,7 +168,7 @@ namespace LrndefLib
 
                 // Append metadata
                 var metadataJObject = JObject.FromObject(Metadata, jsonSerializer);
-                var metadataProperty = new JProperty("metadata", Metadata);
+                var metadataProperty = new JProperty("metadata", metadataJObject);
                 jObject.AddFirst(metadataProperty);
 
                 using (var jsonWriter = new JsonTextWriter(writer))
