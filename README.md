@@ -1,7 +1,7 @@
 # LrndefLib
 LrndefLib provides a version-based config file
 
-![GitHub license](https://img.shields.io/github/license/Arthri/LrndefLib?style=flat-square) ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/Arthri/LrndefLib?sort=semver&style=flat-square) ![GitHub release (latest SemVer including pre-releases)](https://img.shields.io/github/v/release/Arthri/LrndefLib?include_prereleases&sort=semver&style=flat-square) ![Nuget](https://img.shields.io/nuget/v/LrndefLib?style=flat-square) ![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/LrndefLib?style=flat-square)
+![GitHub license](https://img.shields.io/github/license/Arthri/LrndefLib?style=flat-square "License") ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/Arthri/LrndefLib?sort=semver&style=flat-square "Latest GitHub Release") ![GitHub release (latest SemVer including pre-releases)](https://img.shields.io/github/v/release/Arthri/LrndefLib?include_prereleases&sort=semver&style=flat-square "Latest GitHub Release(including Pre-Releases)") ![NuGet](https://img.shields.io/nuget/v/LrndefLib?style=flat-square "Latest NuGet Release") ![NuGet (with prereleases)](https://img.shields.io/nuget/vpre/LrndefLib?style=flat-square "Latest NuGet Release(including Pre-Releases)")
 
 ## Goals
 
