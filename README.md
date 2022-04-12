@@ -1,9 +1,9 @@
 # LrndefLib
 LrndefLib provides a version-based config file
 
-[![GitHub license](https://img.shields.io/github/license/Arthri/LrndefLib?style=flat-square "License")](blob/HEAD/LICENSE)
-[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/Arthri/LrndefLib?sort=semver&style=flat-square "Latest GitHub Release")](releases/latest)
-[![GitHub release (latest SemVer including pre-releases)](https://img.shields.io/github/v/release/Arthri/LrndefLib?include_prereleases&sort=semver&style=flat-square "Latest GitHub Release(including Pre-Releases)")](releases)
+[![GitHub license](https://img.shields.io/github/license/Arthri/LrndefLib?style=flat-square "License")](../../blob/HEAD/LICENSE)
+[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/Arthri/LrndefLib?sort=semver&style=flat-square "Latest GitHub Release")](../../releases/latest)
+[![GitHub release (latest SemVer including pre-releases)](https://img.shields.io/github/v/release/Arthri/LrndefLib?include_prereleases&sort=semver&style=flat-square "Latest GitHub Release(including Pre-Releases)")](../../releases)
 [![NuGet](https://img.shields.io/nuget/v/LrndefLib?style=flat-square "Latest NuGet Release")](https://www.nuget.org/packages/LrndefLib/latest)
 [![NuGet (with prereleases)](https://img.shields.io/nuget/vpre/LrndefLib?style=flat-square "Latest NuGet Release(including Pre-Releases)")](https://www.nuget.org/packages/LrndefLib/absoluteLatest)
 
